@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solomon Adepoju | Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Solomon Adepoju, a full-stack developer in Milton Keynes, UK. Projects, skills, education and contact details.">
+
+  <!-- Social sharing preview -->
+  <meta property="og:title" content="Solomon Adepoju | Full-Stack Developer">
+  <meta property="og:description" content="Projects, skills, education and contact details.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/icons/icon-512.png">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Solomon A.">
+
+  <!-- Set the theme before the page draws, so it doesn't flash -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a href="#top" class="logo">SA<span>.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="install-btn" class="btn btn-small" hidden>Install app</button>
+        <button id="theme-btn" class="icon-btn" aria-label="Switch light or dark theme">☀</button>
+        <button id="menu-btn" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section id="top" class="hero container">
+      <div class="hero-text">
+        <p class="eyebrow" id="hero-location"></p>
+        <h1>Hi, I'm <span class="accent" id="hero-name"></span>.</h1>
+        <p class="typed-line">
+          <span class="sr-only" id="role-static"></span>
+          <span id="typed" aria-hidden="true"></span><span class="caret" aria-hidden="true">|</span>
+        </p>
+        <p class="lead" id="hero-intro"></p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn">See my projects</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+        </div>
+        <div class="hero-links" id="hero-links"></div>
+        <div class="stats" id="stats"></div>
+      </div>
+
+      <!-- Mini terminal -->
+      <div class="terminal" aria-label="Interactive terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span><p>solomon@portfolio: ~</p></div>
+        <div class="terminal-body" id="term-out" aria-live="polite"></div>
+        <form class="terminal-input" id="term-form" autocomplete="off">
+          <label for="term-in" class="prompt">&gt;</label>
+          <input id="term-in" type="text" placeholder="type help and press Enter" spellcheck="false">
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="section container reveal">
+      <h2>About me</h2>
+      <div id="about-text" class="prose"></div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="section container reveal">
+      <h2>Skills</h2>
+      <p class="hint">👆 Click any skill to see where I've used it, in projects and at university.</p>
+      <div id="skills-grid" class="grid grid-3"></div>
+      <div id="skill-panel" class="skill-panel card" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects" class="section container reveal">
+      <h2>Projects</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects by technology"></div>
+      <div id="projects-list" class="projects"></div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section id="education" class="section container reveal">
+      <h2>Education</h2>
+      <div class="card edu-card">
+        <div class="edu-head" id="edu-head"></div>
+        <h3 class="sub">Skills I gained</h3>
+        <div id="edu-skills"></div>
+        <h3 class="sub">Modules</h3>
+        <div class="tabs" role="tablist" id="year-tabs"></div>
+        <div id="year-panel" role="tabpanel"></div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section container contact reveal">
+      <h2>Let's talk</h2>
+      <p class="lead">I'm looking for junior full-stack developer roles. If you'd like to chat, I'd love to hear from you.</p>
+      <div id="contact-links" class="hero-actions"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Solomon Adepoju · Built from scratch with HTML, CSS &amp; JavaScript · Installable as an app</p>
+  </footer>
+
+  <button id="top-btn" class="top-btn" aria-label="Back to top" hidden>↑</button>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <div id="ios-hint" class="toast ios" hidden>
+    To install: tap <strong>Share</strong> then <strong>Add to Home Screen</strong>.
+    <button id="ios-hint-close" aria-label="Close">×</button>
+  </div>
+
+  <script src="/data.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

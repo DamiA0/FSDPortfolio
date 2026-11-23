@@ -1,0 +1,7 @@
+# Python environment and cache (not part of the website)
+.venv/
+__pycache__/
+
+# Windows / editor clutter
+Thumbs.db
+.vscode/
