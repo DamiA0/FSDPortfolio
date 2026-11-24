@@ -61,7 +61,7 @@ const PORTFOLIO = {
       ],
       learned: "How to take AI models from a notebook to a live product, and how to collect data legally and politely.",
       stack: ["Python", "Machine learning models", "Computer vision", "Vector databases", "Web scraping", "REST/JSON APIs", "Cloudflare"],
-      live: "https://app.matchthefit.co.uk",
+      live: "https://matchthefit.fsdportfolio.com",
       code: "https://github.com/DamiA0/Hoodie-Finder", // change to the repo link, e.g. "https://github.com/DamiA0/matchthefit"
     },
     {
@@ -77,7 +77,7 @@ const PORTFOLIO = {
       ],
       learned: "Service workers, accessibility (keyboard navigation and reduced motion) and keeping content separate from code.",
       stack: ["JavaScript", "HTML", "CSS", "Responsive design", "Accessibility", "Progressive Web Apps", "Git & GitHub", "Vercel", "Continuous deployment"],
-      live: "https://fsdportfolio.vercel.app",
+      live: "https://fsdportfolio.com",
       code: "https://github.com/DamiA0/FSDPortfolio",
     },
   ],

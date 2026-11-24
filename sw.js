@@ -5,7 +5,7 @@
 //  below (v1 → v2) so visitors get the new version.
 // =============================================================
 
-const CACHE = "portfolio-v3";
+const CACHE = "portfolio-v4";
 
 const FILES = [
   "/",
